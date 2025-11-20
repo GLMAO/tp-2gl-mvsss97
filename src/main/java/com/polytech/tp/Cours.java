@@ -23,6 +23,19 @@ public class Cours implements ICours {
         this.necessiteProjecteur = necessiteProjecteur;
     }
 
+    // Constructeur utilisé par le Builder
+    public Cours(CoursBuilder builder) {
+        this.matiere = builder.getMatiere();
+        this.enseignant = builder.getEnseignant();
+        this.salle = builder.getSalle();
+        this.date = builder.getDate();
+        this.heureDebut = builder.getHeureDebut();
+        this.estOptionnel = builder.isEstOptionnel();
+        this.niveau = builder.getNiveau();
+        this.necessiteProjecteur = builder.isNecessiteProjecteur();
+    }
+
+
     @Override
     public String getDescription() {
         return "Cours de " + matiere + " avec " + enseignant + " (" + salle + ")";
